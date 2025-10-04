@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 # Movement
 var speed := 500
-var jump_velocity = -400
+var jump_velocity = -500
 var gravity := 1000
 
 # Dash

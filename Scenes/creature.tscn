@@ -4,12 +4,19 @@
 [ext_resource type="Texture2D" uid="uid://bsi084804jix1" path="res://Assets/EvilGodot.webp" id="2_1k0n7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w7hms"]
+size = Vector2(96, 79)
 
 [node name="Creature" type="CharacterBody2D"]
+position = Vector2(-3, -3)
 script = ExtResource("1_nugsn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_w7hms")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, 0)
+scale = Vector2(0.10237069, 0.0913242)
 texture = ExtResource("2_1k0n7")
+
+[node name="RayCast2D" type="RayCast2D" parent="Sprite2D"]
+target_position = Vector2(-125, 0)
