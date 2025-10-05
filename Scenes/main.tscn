@@ -13,7 +13,9 @@ size = Vector2(781.17316, 134)
 position = Vector2(112, 360)
 
 [node name="Creature" parent="." instance=ExtResource("3_8gbba")]
-position = Vector2(496, -35)
+position = Vector2(971, 346)
+player_path = NodePath("../Player")
+delay_frames = 200
 
 [node name="Temporary_platform" type="StaticBody2D" parent="."]
 position = Vector2(480, 480)

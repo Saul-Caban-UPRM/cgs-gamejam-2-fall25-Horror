@@ -10,10 +10,15 @@ var dash_speed := 10000
 var dash_time := 0.2
 var can_dash := false  # Dash becomes available only after jump
 
+# For creature mimic
+var movement_history: Array[Vector2] = []
+@export var max_history_length := 3000  # limit memory usage
+
 func _physics_process(delta):
 	# Dash (air dash only)
 	if is_on_floor():
 		can_dash = false
+
 	# Horizontal movement
 	if Input.is_action_pressed("move_right"):
 		velocity.x = speed
@@ -33,8 +38,14 @@ func _physics_process(delta):
 	# Dash (air dash only)
 	if Input.is_action_just_pressed("dash") and can_dash:
 		dash()
+
 	# Move the character
 	move_and_slide()
+
+	# --- Record position each frame ---
+	movement_history.append(global_position)
+	if movement_history.size() > max_history_length:
+		movement_history.pop_front()
 
 func dash():
 	can_dash = false  # Consume the dash
