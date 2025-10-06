@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bae3fjhkxf07a" path="res://Scenes/creature.tscn" id="3_8gbba"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jjvhh"]
-size = Vector2(781.17316, 134)
+size = Vector2(781.173, 134)
 
 [node name="Main" type="Node2D"]
 
@@ -25,7 +25,7 @@ shape = SubResource("RectangleShape2D_jjvhh")
 
 [node name="Sprite2D" type="Sprite2D" parent="Temporary_platform"]
 position = Vector2(43, 0)
-scale = Vector2(13.0390625, 1)
+scale = Vector2(13.0391, 1)
 texture = ExtResource("2_8gbba")
 
 [node name="Temporary_platform2" type="StaticBody2D" parent="."]
@@ -37,6 +37,6 @@ scale = Vector2(2.13525, 1)
 shape = SubResource("RectangleShape2D_jjvhh")
 
 [node name="Sprite2D" type="Sprite2D" parent="Temporary_platform2"]
-position = Vector2(1123.0001, -149)
-scale = Vector2(13.0390625, 1)
+position = Vector2(1123, -149)
+scale = Vector2(13.0391, 1)
 texture = ExtResource("2_8gbba")
