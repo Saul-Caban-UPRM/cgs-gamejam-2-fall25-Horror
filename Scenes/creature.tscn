@@ -1,22 +1,34 @@
-[gd_scene load_steps=4 format=3 uid="uid://bae3fjhkxf07a"]
+[gd_scene load_steps=5 format=3 uid="uid://bae3fjhkxf07a"]
 
 [ext_resource type="Script" uid="uid://bpma5h28teg2k" path="res://creature.gd" id="1_nugsn"]
 [ext_resource type="Texture2D" uid="uid://bsi084804jix1" path="res://Assets/EvilGodot.webp" id="2_1k0n7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w7hms"]
-size = Vector2(96, 79)
+size = Vector2(105, 79)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_01bph"]
+size = Vector2(105, 79)
 
 [node name="Creature" type="CharacterBody2D"]
 position = Vector2(-3, -3)
 script = ExtResource("1_nugsn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8.5, 0)
 shape = SubResource("RectangleShape2D_w7hms")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(2, 0)
-scale = Vector2(0.10237069, 0.0913242)
+position = Vector2(6.2499986, 0)
+scale = Vector2(0.093211204, 0.0913242)
 texture = ExtResource("2_1k0n7")
 
 [node name="RayCast2D" type="RayCast2D" parent="Sprite2D"]
 target_position = Vector2(-125, 0)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Hitbox" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(8.5, 0.5)
+shape = SubResource("RectangleShape2D_01bph")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

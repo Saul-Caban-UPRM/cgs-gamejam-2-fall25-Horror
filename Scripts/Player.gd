@@ -8,11 +8,11 @@ var gravity := 1000
 # Dash
 var dash_speed := 10000
 var dash_time := 0.2
-var can_dash := false  # Dash becomes available only after jump
+var can_dash := false
 
 # For creature mimic
 var movement_history: Array[Vector2] = []
-@export var max_history_length := 3000  # limit memory usage
+@export var max_history_length := 3000
 
 func _physics_process(delta):
 	# Dash (air dash only)
@@ -30,12 +30,12 @@ func _physics_process(delta):
 	# Jump
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_velocity
-		can_dash = true  # Enable dash after jumping
+		can_dash = true
 
 	# Gravity
 	velocity.y += gravity * delta
 
-	# Dash (air dash only)
+	# Dash
 	if Input.is_action_just_pressed("dash") and can_dash:
 		dash()
 
@@ -48,7 +48,7 @@ func _physics_process(delta):
 		movement_history.pop_front()
 
 func dash():
-	can_dash = false  # Consume the dash
+	can_dash = false
 	velocity.x = (Input.get_action_strength("move_right") - Input.get_action_strength("move_left")) * dash_speed
 	velocity.y = 0
 	move_and_slide()
