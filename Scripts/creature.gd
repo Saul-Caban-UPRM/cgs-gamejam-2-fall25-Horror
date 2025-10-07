@@ -42,8 +42,12 @@ func trigger_jumpscare():
 	print("💀 Jumpscare activado")
 	if jumpscare_ui:
 		jumpscare_ui.show_jumpscare()
+		await get_tree().create_timer(1.5).timeout
+		get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
 
 
 func _on_Hitbox_body_entered(body):
 	if body.name == "Player":  # O usa groups
 		trigger_jumpscare()
+		
+	
