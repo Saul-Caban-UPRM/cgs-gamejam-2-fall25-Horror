@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://bd78xu4yl7n03"]
 
-[ext_resource type="PackedScene" uid="uid://bae3fjhkxf07a" path="res://Scenes/creature.tscn" id="1_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://bh0f5mcbavw2q" path="res://Scenes/player.tscn" id="1_bo1nx"]
 [ext_resource type="Texture2D" uid="uid://dwh8ai7np4rad" path="res://Assets/icon.svg" id="2_8gbba"]
 [ext_resource type="PackedScene" uid="uid://bae3fjhkxf07a" path="res://Scenes/creature.tscn" id="3_8gbba"]
-[ext_resource type="Script" uid="uid://78rjf5wcgvp" path="res://Scenes/jumpscare_ui.gd" id="3_kry3j"]
-[ext_resource type="Texture2D" uid="uid://eeaqdce74k73" path="res://Scenes/ScaryImageforGame.jpg" id="4_21xkr"]
+[ext_resource type="Script" uid="uid://bmvnp0u3uflqb" path="res://Scripts/jumpscare_ui.gd" id="3_kry3j"]
+[ext_resource type="Texture2D" uid="uid://1soa46j4l2dp" path="res://Assets/ScaryImageforGame.jpg" id="4_21xkr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jjvhh"]
 size = Vector2(781.173, 134)
@@ -13,11 +13,6 @@ size = Vector2(781.173, 134)
 
 [node name="Player" parent="." instance=ExtResource("1_bo1nx")]
 position = Vector2(112, 360)
-
-[node name="Creature" parent="." instance=ExtResource("3_8gbba")]
-position = Vector2(-184, 350)
-player_path = NodePath("../Player")
-delay_frames = 200
 
 [node name="JumpscareUI" type="CanvasLayer" parent="."]
 script = ExtResource("3_kry3j")
@@ -58,3 +53,6 @@ shape = SubResource("RectangleShape2D_jjvhh")
 position = Vector2(1123, -149)
 scale = Vector2(13.0391, 1)
 texture = ExtResource("2_8gbba")
+
+[node name="Creature" parent="." instance=ExtResource("3_8gbba")]
+player_path = NodePath("../Player")
