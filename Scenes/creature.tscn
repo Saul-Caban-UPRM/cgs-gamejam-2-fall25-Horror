@@ -1,26 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://bae3fjhkxf07a"]
+[gd_scene load_steps=4 format=3 uid="uid://bae3fjhkxf07a"]
 
 [ext_resource type="Script" uid="uid://ckf2j3qm1bqng" path="res://Scripts/creature.gd" id="1_nugsn"]
-[ext_resource type="Texture2D" uid="uid://bsi084804jix1" path="res://Assets/EvilGodot.webp" id="2_1k0n7"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7hms"]
-size = Vector2(105, 79)
+[ext_resource type="Texture2D" uid="uid://bq201mgcb8ixe" path="res://Assets/Untitled 10-04-2025 02-41-31 (1).png" id="2_01bph"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_01bph"]
 size = Vector2(105, 79)
 
 [node name="Creature" type="CharacterBody2D"]
-position = Vector2(-3, -3)
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_nugsn")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8.5, 0)
-shape = SubResource("RectangleShape2D_w7hms")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(6.25, 0)
-scale = Vector2(0.0932112, 0.0913242)
-texture = ExtResource("2_1k0n7")
+scale = Vector2(0.35, 0.343)
+texture = ExtResource("2_01bph")
 
 [node name="RayCast2D" type="RayCast2D" parent="Sprite2D"]
 target_position = Vector2(-125, 0)
@@ -28,7 +20,7 @@ target_position = Vector2(-125, 0)
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="Hitbox" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(8.5, 0.5)
+scale = Vector2(0.75, 1.1)
 shape = SubResource("RectangleShape2D_01bph")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

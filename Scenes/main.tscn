@@ -55,4 +55,5 @@ scale = Vector2(13.0391, 1)
 texture = ExtResource("2_8gbba")
 
 [node name="Creature" parent="." instance=ExtResource("3_8gbba")]
+position = Vector2(531, 128)
 player_path = NodePath("../Player")
