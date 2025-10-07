@@ -1,16 +1,67 @@
-[gd_scene load_steps=4 format=3 uid="uid://bae3fjhkxf07a"]
+[gd_scene load_steps=12 format=3 uid="uid://bae3fjhkxf07a"]
 
 [ext_resource type="Script" uid="uid://ckf2j3qm1bqng" path="res://Scripts/creature.gd" id="1_nugsn"]
 [ext_resource type="Texture2D" uid="uid://bq201mgcb8ixe" path="res://Assets/Untitled 10-04-2025 02-41-31 (1).png" id="2_01bph"]
+[ext_resource type="Texture2D" uid="uid://bruh1yujb1ivk" path="res://Assets/EnemyIdleAnimation.png" id="3_ktm42"]
+[ext_resource type="Texture2D" uid="uid://c3r3mytah0ete" path="res://Assets/enemywalkinganimation.png" id="4_idm37"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_01bph"]
 size = Vector2(156.444, 90.303)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kor7d"]
+atlas = ExtResource("3_ktm42")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkbom"]
+atlas = ExtResource("3_ktm42")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xugjv"]
+atlas = ExtResource("4_idm37")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbwfh"]
+atlas = ExtResource("4_idm37")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_icpxm"]
+atlas = ExtResource("4_idm37")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pmgko"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kor7d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkbom")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xugjv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bbwfh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_icpxm")
+}],
+"loop": true,
+"name": &"Walking",
+"speed": 5.0
+}]
 
 [node name="Creature" type="CharacterBody2D"]
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_nugsn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(0.35, 0.343)
 texture = ExtResource("2_01bph")
 
@@ -23,5 +74,11 @@ target_position = Vector2(-125, 0)
 position = Vector2(-2, -5.66667)
 scale = Vector2(0.75, 1.1)
 shape = SubResource("RectangleShape2D_01bph")
+
+[node name="CreatureAnimations" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.35, 0.35)
+sprite_frames = SubResource("SpriteFrames_pmgko")
+animation = &"Idle"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
