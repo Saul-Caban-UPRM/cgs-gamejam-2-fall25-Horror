@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var player_path: NodePath
 @export var delay_frames := 20
-@export var follow_speed := 0.1
+@export var follow_speed := 0.01
 @export var collision_distance := 20
 
 var player
@@ -70,9 +70,6 @@ func trigger_jumpscare():
 		get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
 
 
-func _on_Hitbox_body_entered(body):
-	if body.name == "Player":
-		trigger_jumpscare()
 
 
 func update_animation(animation):
@@ -80,3 +77,8 @@ func update_animation(animation):
 		anim_player.play("Walking")
 	elif animation == "Idle":
 		anim_player.play("Idle")
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.name == "Player":
+		trigger_jumpscare()
