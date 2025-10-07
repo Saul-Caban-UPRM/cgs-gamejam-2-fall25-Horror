@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bd78xu4yl7n03"]
 
-[ext_resource type="PackedScene" uid="uid://bh0f5mcbavw2q" path="res://Scenes/player.tscn" id="1_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://bae3fjhkxf07a" path="res://Scenes/creature.tscn" id="1_bo1nx"]
 [ext_resource type="Texture2D" uid="uid://dwh8ai7np4rad" path="res://Assets/icon.svg" id="2_8gbba"]
 [ext_resource type="PackedScene" uid="uid://bae3fjhkxf07a" path="res://Scenes/creature.tscn" id="3_8gbba"]
 [ext_resource type="Script" uid="uid://78rjf5wcgvp" path="res://Scenes/jumpscare_ui.gd" id="3_kry3j"]
