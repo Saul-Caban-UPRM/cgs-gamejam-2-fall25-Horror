@@ -1,19 +1,32 @@
-[gd_scene load_steps=5 format=3 uid="uid://bd78xu4yl7n03"]
+[gd_scene load_steps=7 format=3 uid="uid://bd78xu4yl7n03"]
 
 [ext_resource type="PackedScene" uid="uid://bh0f5mcbavw2q" path="res://Scenes/player.tscn" id="1_bo1nx"]
 [ext_resource type="Texture2D" uid="uid://dwh8ai7np4rad" path="res://Assets/icon.svg" id="2_8gbba"]
 [ext_resource type="PackedScene" uid="uid://bae3fjhkxf07a" path="res://Scenes/creature.tscn" id="3_8gbba"]
+[ext_resource type="Script" uid="uid://bmvnp0u3uflqb" path="res://Scripts/jumpscare_ui.gd" id="3_kry3j"]
+[ext_resource type="Texture2D" uid="uid://1soa46j4l2dp" path="res://Assets/ScaryImageforGame.jpg" id="4_21xkr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jjvhh"]
-size = Vector2(781.17316, 134)
+size = Vector2(781.173, 134)
 
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_bo1nx")]
 position = Vector2(112, 360)
 
-[node name="Creature" parent="." instance=ExtResource("3_8gbba")]
-position = Vector2(496, -35)
+[node name="JumpscareUI" type="CanvasLayer" parent="."]
+script = ExtResource("3_kry3j")
+
+[node name="JumpscareImage" type="TextureRect" parent="JumpscareUI"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_21xkr")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="JumpscareUI"]
 
 [node name="Temporary_platform" type="StaticBody2D" parent="."]
 position = Vector2(480, 480)
@@ -25,7 +38,7 @@ shape = SubResource("RectangleShape2D_jjvhh")
 
 [node name="Sprite2D" type="Sprite2D" parent="Temporary_platform"]
 position = Vector2(43, 0)
-scale = Vector2(13.0390625, 1)
+scale = Vector2(13.0391, 1)
 texture = ExtResource("2_8gbba")
 
 [node name="Temporary_platform2" type="StaticBody2D" parent="."]
@@ -37,6 +50,10 @@ scale = Vector2(2.13525, 1)
 shape = SubResource("RectangleShape2D_jjvhh")
 
 [node name="Sprite2D" type="Sprite2D" parent="Temporary_platform2"]
-position = Vector2(1123.0001, -149)
-scale = Vector2(13.0390625, 1)
+position = Vector2(1123, -149)
+scale = Vector2(13.0391, 1)
 texture = ExtResource("2_8gbba")
+
+[node name="Creature" parent="." instance=ExtResource("3_8gbba")]
+position = Vector2(531, 128)
+player_path = NodePath("../Player")

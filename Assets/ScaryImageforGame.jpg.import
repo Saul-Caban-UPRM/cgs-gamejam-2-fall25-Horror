@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsi084804jix1"
-path="res://.godot/imported/EvilGodot.webp-b176b9f024efb3a39e6a0cfa1543cdb0.ctex"
+uid="uid://1soa46j4l2dp"
+path="res://.godot/imported/ScaryImageforGame.jpg-3607590f0ba668b5fad2c24dd1f86d22.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/EvilGodot.webp"
-dest_files=["res://.godot/imported/EvilGodot.webp-b176b9f024efb3a39e6a0cfa1543cdb0.ctex"]
+source_file="res://Assets/ScaryImageforGame.jpg"
+dest_files=["res://.godot/imported/ScaryImageforGame.jpg-3607590f0ba668b5fad2c24dd1f86d22.ctex"]
 
 [params]
 
