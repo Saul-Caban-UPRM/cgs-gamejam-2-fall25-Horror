@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bh0f5mcbavw2q" path="res://Scenes/player.tscn" id="1_bo1nx"]
 [ext_resource type="Texture2D" uid="uid://dwh8ai7np4rad" path="res://Assets/icon.svg" id="2_8gbba"]
 [ext_resource type="PackedScene" uid="uid://bae3fjhkxf07a" path="res://Scenes/creature.tscn" id="3_8gbba"]
-[ext_resource type="Script" path="res://Scripts/jumpscare_ui.gd" id="3_kry3j"]
+[ext_resource type="Script" uid="uid://bmvnp0u3uflqb" path="res://Scripts/jumpscare_ui.gd" id="3_kry3j"]
 [ext_resource type="Texture2D" uid="uid://1soa46j4l2dp" path="res://Assets/ScaryImageforGame.jpg" id="4_21xkr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jjvhh"]
