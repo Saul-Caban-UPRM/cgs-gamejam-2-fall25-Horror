@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c3r3mytah0ete" path="res://Assets/enemywalkinganimation.png" id="4_idm37"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_01bph"]
-size = Vector2(156.444, 90.303)
+size = Vector2(101.333336, 82.424225)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kor7d"]
 atlas = ExtResource("3_ktm42")
@@ -71,8 +71,8 @@ target_position = Vector2(-125, 0)
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="Hitbox" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-2, -5.66667)
-scale = Vector2(0.75, 1.1)
+position = Vector2(4.666668, -1.33334)
+scale = Vector2(0.75, 1.1000001)
 shape = SubResource("RectangleShape2D_01bph")
 
 [node name="CreatureAnimations" type="AnimatedSprite2D" parent="."]

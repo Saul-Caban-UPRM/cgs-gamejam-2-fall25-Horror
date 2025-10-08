@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://0h20bmgixx36"]
+
+[ext_resource type="AudioStream" uid="uid://dci7qj6rtqss1" path="res://Assets/Final/Social/Aylex - Arrival (freetouse.com).mp3" id="1_wrh0v"]
+
+[node name="BG music" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_wrh0v")
+autoplay = true
